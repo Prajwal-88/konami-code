@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Key Detection</title>
+    <script type="text/javascript" src="cornify.js"></script>
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body style="background-image: url(./pexels-s-migaj-1009136.jpg); background-size: cover; ">
+    <div style="text-align: center;">
+      <p style="color: aliceblue; font-size: 3rem;">Hint:</p>
+      <p style="color: aliceblue; font-size: 2.7rem;">A piece of heaven on earth</p>
+    </div>
+    <script>
+        const secretcode="mountains"
+        const pressed=[];
+        window.addEventListener('keyup',(e)=>{
+            console.log(e.key)
+            pressed.push(e.key);
+            pressed.splice(-secretcode.length-1,pressed.length-secretcode.length)
+            if(pressed.join('').includes(secretcode)){
+                cornify_add();
+                console.clear();
+                pressed.splice(0,pressed.length)
+            }
+            console.log(pressed)
+
+        })
+
+        window.addEventListener('click',()=>{
+        if(window.screen.availWidth <= 375)
+            cornify_add();
+    })
+    </script>
+  </body>
+</html>
